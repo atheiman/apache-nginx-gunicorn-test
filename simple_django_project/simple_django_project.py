@@ -31,7 +31,7 @@ from django.http import HttpResponse
 # Views
 def index(req):
     return HttpResponse(
-        "Django answers the call to {}".format(req.build_absolute_uri())
+        "Django answers the call to {}\n".format(req.build_absolute_uri())
     )
 
 # URLs
