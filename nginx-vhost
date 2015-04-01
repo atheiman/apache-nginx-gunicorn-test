@@ -1,0 +1,9 @@
+server {
+  listen nginxdomain.com:80;
+  root /var/nginxdomain.com;
+  index index.html index.htm;
+
+  location / {
+      try_files $uri $uri/ =404;
+  }
+}

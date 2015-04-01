@@ -1,1 +1,3 @@
 .vagrant
+ksu_redirects.conf
+.venv
