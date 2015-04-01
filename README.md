@@ -1,15 +1,12 @@
 # The Fabled (convoluted) **Double Reverse Proxy**
 
 > **Apache -> Nginx -> Gunicorn.**<br/>
-> **Three different domains. Three different headaches.**<br/>
+> **Three different URLs. Three different headaches.**<br/>
 > **Add in SSL and auth and you have a recipe for disaster.**<br/>
 
 1. Requests go to a domain served by apache
-
 1. Requests are proxied to a domain served by nginx
-
 1. Requests are proxied to gunicorn app server
-
 1. Django interprets the request, and sends it back up the chain
 
 
