@@ -1,7 +1,9 @@
 # The Fabled (convoluted) **Double Reverse Proxy**
 
 > **Apache -> Nginx -> Gunicorn.**
+
 > **Three different domains. Three different headaches.**
+
 > **Add in SSL and auth and you have a recipe for disaster.**
 
 1. Requests go to a domain served by apache
