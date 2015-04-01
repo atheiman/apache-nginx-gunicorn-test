@@ -1,8 +1,8 @@
 # The Fabled (convoluted) **Double Reverse Proxy**
 
-Apache -> Nginx -> Gunicorn. Three different domains. Three different headaches.
-
-Add in SSL and auth and you have a recipe for disaster.
+> Apache -> Nginx -> Gunicorn. Three different domains. Three different headaches.
+>
+> Add in SSL and auth and you have a recipe for disaster.
 
 1. Requests go to a domain served by apache
 
@@ -23,11 +23,16 @@ gunicorn running at `127.0.0.1:9000`
 ## Quickstart (join us in hell)
 
 ```shell
-$ git clone git@github.com:atheiman/apache-nginx-gunicorn-test.git
+$ vagrant up && vagrant ssh
 
-$ vagrant ssh
+$ curl apachedomain.com:8000/req-to-apache    # Django should echo the url:
+Django answers the call to http://nginxdomain.com/req-to-apache
 
-$ curl apachedomain.com:8000/my-url
+$ curl nginxdomain.com/direct-to-nginx
+Django answers the call to http://nginxdomain.com/direct-to-nginx
+
+$ curl 127.0.0.1:9000/direct-to-gunicorn
+Django answers the call to http://127.0.0.1:9000/direct-to-gunicorn
 ```
 
 
