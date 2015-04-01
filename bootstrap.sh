@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+
 SYNCED_FOLDER=/vagrant
 APACHE_CONF_DIR=/etc/apache2
 DOC_ROOT=/var/www
@@ -8,6 +9,10 @@ NGINX_CONF_DIR=/etc/nginx
 NGINX_VHOST_CONF=nginx-vhost
 NGINX_DOCS_DIR=$SYNCED_FOLDER/nginxdomain.com
 NGINX_DOC_ROOT=/var/nginxdomain.com
+DJANGO_PROJ_DIR=$SYNCED_FOLDER/simple_django_project
+WSGI_MODULE=simple_django_project
+GUNICORN_CONFIG_FILE=gunicorn_config.py
+
 
 # apachedomain.com and nginxdomain.com
 cp -f $SYNCED_FOLDER/hosts /etc/hosts
@@ -40,3 +45,5 @@ service nginx start
 
 
 pip install gunicorn django
+cd $DJANGO_PROJ_DIR
+gunicorn --config $GUNICORN_CONFIG_FILE $WSGI_MODULE &
