@@ -2,7 +2,7 @@
 
 > **Apache -> Nginx -> Gunicorn.**<br/>
 > **Three different URLs. Three different headaches.**<br/>
-> **Add in SSL and auth and you have a recipe for disaster.**<br/>
+> **Add in SSL and auth and you have a recipe for disaster.**
 
 1. Requests go to a domain served by apache
 1. Requests are proxied to a domain served by nginx
@@ -10,10 +10,8 @@
 1. Django interprets the request, and sends it back up the chain
 
 
-apache running at `apachedomain.com:8000`
-
-nginx running at `nginxdomain.com:80`
-
+apache running at `apachedomain.com:8000`<br/>
+nginx running at `nginxdomain.com:80`<br/>
 gunicorn running at `127.0.0.1:9000`
 
 
